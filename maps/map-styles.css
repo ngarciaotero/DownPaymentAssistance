@@ -1,0 +1,143 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  --gmpx-font-family-base: "Roboto", sans-serif;
+  --gmpx-font-family-headings: "Roboto", sans-serif;
+  --gmpx-color-primary: #1967d2;
+}
+
+a {
+  text-decoration: none;
+  color: #1967d2;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+:not(:defined) {
+  visibility: hidden;
+}
+
+gmpx-split-layout {
+  --gmpx-fixed-panel-width-row-layout: 25em;
+}
+
+#locations-panel {
+  overflow-y: auto;
+  background: white;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+#locations-panel-list > header {
+  padding: 1.4em 1.4em 0 1.4em;
+}
+
+#locations-panel-list h1.search-title {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+#locations-panel-list h1.search-title > img {
+  vertical-align: bottom;
+  margin-top: -1em;
+}
+
+#locations-panel-list gmpx-place-picker {
+  width: 100%;
+  margin-top: 0.8em;
+  position: relative;
+}
+
+#locations-panel-list .section-name {
+  font-weight: 500;
+  font-size: 0.9em;
+  margin: 1.8em 0 1em 1.5em;
+}
+
+#location-results-list .result-item {
+  position: relative;
+  padding: 0.8em 3.5em 0.8em 1.4em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+#location-results-list .result-item:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#location-results-list .result-item:last-of-type {
+  border-bottom: none;
+}
+
+#location-results-list .selected .result-item {
+  outline: 2px solid #4285f4;
+}
+
+#location-results-list h2 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0 0 0.6em 0;
+}
+
+#location-results-list .address {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+#location-results-list gmpx-place-directions-button {
+  position: absolute;
+  right: 1.2em;
+  top: 2.3em;
+}
+
+#location-results-list .distance {
+  position: absolute;
+  top: 0.9em;
+  right: 0;
+  text-align: center;
+  font-size: 0.9em;
+  width: 5em;
+}
+
+#location-results-list .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  padding-top: 0.3em;
+}
+
+#location-results-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#details-panel .back-button {
+  margin: 1em 0 0 1em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #1967d2;
+  display: block;
+}
+
+#details-panel .back-button .icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
+
+  /* Match link color #1967d2 */
+  filter: invert(30%) sepia(67%) saturate(7379%) hue-rotate(209deg)
+    brightness(95%) contrast(80%);
+}
