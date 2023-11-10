@@ -58,3 +58,14 @@ python manage.py populate_programs
 
 `
 
+To start the applicationm run this command:
+
+`
+python manage.py runserver
+
+`
+
+View application on port `http://127.0.0.1:8000/check_eligibility/`
+
+
+
