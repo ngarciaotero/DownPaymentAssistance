@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Get Down</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logo-png_1.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <!-- navgaition menu -->
+    <nav>
+      <div class="navbar">
+        <div class="logo"><a href="#">The Get Down.</a></div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Mission</a></li>
+          <li><a href="#skills">Questionnaire</a></li>
+          <li><a href="#services">Resources</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+          <div class="cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </ul>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Home Section Start -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <div class="text-container">
+          <div class="text">
+            <div class="text-one">Ready to buy your dream home?</div>
+            <div class="text-two">
+              We believe that everyone deserves the opportunity to own a home,
+              regardless of their financial situation.
+            </div>
+            <div class="text-three">
+              Let us help you find the down payment assistance programs you
+              qualify for.
+            </div>
+            <div class="text-four">
+              Just answer a few simple questions in our questionnaire
+            </div>
+          </div>
+          <div class="button">
+            <button>Check Eligibility</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section Start -->
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title"><span>Our Mission</span></div>
+        <div class="about-details">
+          <div class="left">
+            <img src="images/about1.png" alt="" />
+          </div>
+          <div class="right">
+            <div class="topic">Where Dreams Become Homes</div>
+            <p>
+              Our mission is to open the door to homeownership by connecting
+              people with the down payment assistance they deserve. We envision
+              a future where financial limitations do not deter the dream of
+              homeownership. With passion and purpose, we simplify the process
+              of securing down payment help so more individuals and families can
+              achieve the life-changing stability and pride of owning a home. We
+              believe that where you start financially should not determine
+              where you end up. At our core is the conviction that homeownership
+              should be accessible to all. Guided by this belief, we work
+              tirelessly to pair people with the down payment resources meant
+              for them. We provide clarity, instill hope and illuminate the path
+              to ownership. Our driving force is the joy we feel when another
+              person claims the keys to their new home. Together, we can build
+              communities that thrive because more people have the opportunity
+              to live where they feel they belong - in a home to call their own.
+            </p>
+            <!-- <div class="button"> -->
+            <!-- <button>Download CV</button> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skill Section Start -->
+    <!-- Section Tag and Other Div will same where we need to put same CSS -->
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title"><span>Program Eligibility Quiz</span></div>
+        <div class="skills-details" id="quizContainer">
+          <!-- Questionnaire Section -->
+          <div id="questionnaire">
+            <div class="question" id="question-1">
+              <p id="question-text-1">
+                Have you owned a home in the past 3 years?
+              </p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div class="question" id="question-2" style="display: none">
+              <p id="question-text-2">
+                Is your household income below the limit for your area based on
+                household size?
+              </p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div class="question" id="question-3" style="display: none">
+              <p id="question-text-3">
+                Do you meet credit requirements for a mortgage loan?
+              </p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div class="question" id="question-4" style="display: none">
+              <p id="question-text-4">Are you a first-time homebuyer?</p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div class="question" id="question-5" style="display: none">
+              <p id="question-text-5">
+                Do you or anyone in your family have a disability?
+              </p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div class="question" id="question-6" style="display: none">
+              <p id="question-text-6">
+                Are you employed as a public protector, educator, healthcare
+                worker, or active military?
+              </p>
+              <button class="next-button" onclick="answerQuestion('Yes')">
+                Yes
+              </button>
+              <button class="next-button" onclick="answerQuestion('No')">
+                No
+              </button>
+            </div>
+
+            <div
+              id="eligibility-message"
+              class="message"
+              style="display: none"
+            ></div>
+          </div>
+          <!-- Question 1 -->
+          <!-- <div class="box" id="question1">
+            <div class="question">
+              <label>Do you live in the State of Georgia?</label>
+              <div class="options">
+                <label for="q1_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="q1_yes"
+                  name="question1"
+                  value="Yes"
+                  required
+                />
+
+                <label for="q1_no">No</label>
+                <input
+                  type="radio"
+                  id="q1_no"
+                  name="question1"
+                  value="No"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question1', 'question2')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+          <!-- Question 2 -->
+          <!-- <div class="box" id="question2" style="display: none">
+            <div class="question">
+              <label>What type of home are you hoping to purchase?</label>
+              <div class="options">
+                <label for="q2_single_family">Single family home</label>
+                <input
+                  type="radio"
+                  id="q2_single_family"
+                  name="question2"
+                  value="Single family home"
+                  required
+                />
+
+                <label for="q2_townhouse">Townhouse</label>
+                <input
+                  type="radio"
+                  id="q2_townhouse"
+                  name="question2"
+                  value="Townhouse"
+                  required
+                />
+
+                <label for="q2_condo_apartment">Condo/Apartment</label>
+                <input
+                  type="radio"
+                  id="q2_condo_apartment"
+                  name="question2"
+                  value="Condo/Apartment"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question2', 'question3')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+          <!-- Question 3 -->
+          <!-- <div class="box" id="question3" style="display: none">
+            <div class="question">
+              <label>What is the estimated purchase price of the home?</label>
+              <div class="options">
+                <label for="q3_less_than_200k">Less than $200,000</label>
+                <input
+                  type="radio"
+                  id="q3_less_than_200k"
+                  name="question3"
+                  value="Less than $200,000"
+                  required
+                />
+
+                <label for="q3_200k_to_250k">$200,000 - $250,000</label>
+                <input
+                  type="radio"
+                  id="q3_200k_to_250k"
+                  name="question3"
+                  value="$200,000 - $250,000"
+                  required
+                />
+
+                <label for="q3_250k_to_300k">$250,001 - $300,000</label>
+                <input
+                  type="radio"
+                  id="q3_250k_to_300k"
+                  name="question3"
+                  value="$250,001 - $300,000"
+                  required
+                />
+
+                <label for="q3_300k_to_350k">$300,001 - $350,000</label>
+                <input
+                  type="radio"
+                  id="q3_300k_to_350k"
+                  name="question3"
+                  value="$300,001 - $350,000"
+                  required
+                />
+
+                <label for="q3_350k_to_375k">$350,001 - $375,000</label>
+                <input
+                  type="radio"
+                  id="q3_350k_to_375k"
+                  name="question3"
+                  value="$350,001 - $375,000"
+                  required
+                />
+
+                <label for="q3_more_than_375k">More than $375,000</label>
+                <input
+                  type="radio"
+                  id="q3_more_than_375k"
+                  name="question3"
+                  value="More than $375,000"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question3', 'question4')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 4 -->
+          <!-- <div class="box" id="question4" style="display: none">
+            <div class="question">
+              <label>
+                Do you currently qualify for a mortgage loan through FHA, VA, or
+                a conventional lender?
+              </label>
+              <div class="options">
+                <label for="q4_yes">Yes, I qualify</label>
+                <input
+                  type="radio"
+                  id="q4_yes"
+                  name="question4"
+                  value="Yes"
+                  required
+                />
+
+                <label for="q4_no">No, I do not currently qualify</label>
+                <input
+                  type="radio"
+                  id="q4_no"
+                  name="question4"
+                  value="No"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question4', 'question5')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 5 -->
+          <!-- <div class="box" id="question5" style="display: none">
+            <div class="question">
+              <label>What is your credit score?</label>
+              <div class="options">
+                <label for="q5_below_640">Below 640</label>
+                <input
+                  type="radio"
+                  id="q5_below_640"
+                  name="question5"
+                  value="Below 640"
+                  required
+                />
+
+                <label for="q5_640_to_679">640-679</label>
+                <input
+                  type="radio"
+                  id="q5_640_to_679"
+                  name="question5"
+                  value="640-679"
+                  required
+                />
+
+                <label for="q5_680_to_719">680-719</label>
+                <input
+                  type="radio"
+                  id="q5_680_to_719"
+                  name="question5"
+                  value="680-719"
+                  required
+                />
+
+                <label for="q5_720_plus">720+</label>
+                <input
+                  type="radio"
+                  id="q5_720_plus"
+                  name="question5"
+                  value="720+"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question5', 'question6')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 6 -->
+          <!-- <div class="box" id="question6" style="display: none">
+            <div class="question">
+              <label
+                >What is your total annual household income as a percentage of
+                AMI?</label
+              >
+              <div class="options">
+                <label for="q6_at_or_below_80">At or below 80% AMI</label>
+                <input
+                  type="radio"
+                  id="q6_at_or_below_80"
+                  name="question6"
+                  value="At or below 80% AMI"
+                  required
+                />
+
+                <label for="q6_81_to_100">81-100% AMI</label>
+                <input
+                  type="radio"
+                  id="q6_81_to_100"
+                  name="question6"
+                  value="81-100% AMI"
+                  required
+                />
+
+                <label for="q6_101_to_120">101-120% AMI</label>
+                <input
+                  type="radio"
+                  id="q6_101_to_120"
+                  name="question6"
+                  value="101-120% AMI"
+                  required
+                />
+
+                <label for="q6_over_120">Over 120% AMI</label>
+                <input
+                  type="radio"
+                  id="q6_over_120"
+                  name="question6"
+                  value="Over 120% AMI"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question6', 'question7')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 7 -->
+          <!-- <div class="box" id="question7" style="display: none">
+            <div class="question">
+              <label
+                >Is this your first time purchasing a home, or have you owned a
+                home in the last 3 years?</label
+              >
+              <div class="options">
+                <label for="q7_first_time">I am a first time home buyer</label>
+                <input
+                  type="radio"
+                  id="q7_first_time"
+                  name="question7"
+                  value="First time home buyer"
+                  required
+                />
+
+                <label for="q7_not_owned_last_3"
+                  >I have not owned in the last 3 years</label
+                >
+                <input
+                  type="radio"
+                  id="q7_not_owned_last_3"
+                  name="question7"
+                  value="Not owned in last 3 years"
+                  required
+                />
+
+                <label for="q7_owned_last_3"
+                  >I have owned in the last 3 years</label
+                >
+                <input
+                  type="radio"
+                  id="q7_owned_last_3"
+                  name="question7"
+                  value="Owned in last 3 years"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question7', 'question8')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 8 -->
+          <!-- <div class="box" id="question8" style="display: none">
+            <div class="question">
+              <label
+                >What is the approximate amount of your liquid assets?</label
+              >
+              <div class="options">
+                <label for="q8_0_10k">$0 - $10,000</label>
+                <input
+                  type="radio"
+                  id="q8_0_10k"
+                  name="question8"
+                  value="$0 - $10,000"
+                  required
+                />
+
+                <label for="q8_10k_25k">$10,001 - $25,000</label>
+                <input
+                  type="radio"
+                  id="q8_10k_25k"
+                  name="question8"
+                  value="$10,001 - $25,000"
+                  required
+                />
+
+                <label for="q8_more_than_25k">More than $25,000</label>
+                <input
+                  type="radio"
+                  id="q8_more_than_25k"
+                  name="question8"
+                  value="More than $25,000"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question8', 'question9')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 9 -->
+          <!-- <div class="box" id="question9" style="display: none">
+            <div class="question">
+              <label
+                >Are you employed as a public protector, educator, or health
+                care provider?</label
+              >
+              <div class="options">
+                <label for="q9_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="q9_yes"
+                  name="question9"
+                  value="Yes"
+                  required
+                />
+
+                <label for="q9_no">No</label>
+                <input
+                  type="radio"
+                  id="q9_no"
+                  name="question9"
+                  value="No"
+                  required
+                />
+              </div>
+              <button
+                class="next-button"
+                onclick="nextQuestion('question9', 'question10')"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+
+          <!-- Question 10 -->
+          <!-- <div class="box" id="question10" style="display: none">
+            <div class="question">
+              <label
+                >Are you living with a disability or a member that will be
+                living in the house with a disability?</label
+              >
+              <div class="options">
+                <label for="q10_yes">Yes</label>
+                <input
+                  type="radio"
+                  id="q10_yes"
+                  name="question10"
+                  value="Yes"
+                  required
+                />
+
+                <label for="q10_no">No</label>
+                <input
+                  type="radio"
+                  id="q10_no"
+                  name="question10"
+                  value="No"
+                  required
+                />
+              </div>
+              <button class="submit-button" onclick="submitQuiz()">
+                Submit
+              </button>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+
+    <!-- My Services Section Start -->
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title"><span>Resources</span></div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="topic">Program Directory</div>
+            <p>
+              Search our comprehensive directory of down payment assistance
+              programs in your state/city.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="topic">Application Checklist</div>
+            <p>
+              See required documents and forms needed to apply for down payment
+              assistance.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="topic">Down Payment Savings Calculator</div>
+            <p>
+              Use this calculator to estimate how much you need to save for a
+              down payment.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="topic">Home Search Map</div>
+            <p>
+              Use our interactive map to find homes for sale within the price
+              limits of your down payment assistance program.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Community Forum</div>
+            <p>
+              Get guidance and connect with others in our homebuyer community
+              forums.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="topic">Affordable Lender Finder</div>
+            <p>
+              Find lenders in your area familiar with down payment assistance
+              programs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me section Start -->
+    <!-- <section class="contact" id="contact">
+      <div class="content">
+        <div class="title"><span>Contact Me</span></div>
+        <div class="text">
+          <div class="topic">Have Any Project?</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+            neque ipsum corrupti dolores, facere numquam voluptate aspernatur
+            sit perferendis qui nisi modi! Recusandae deserunt consequatur
+            voluptatibus alias repellendus nobis eligendi.
+          </p>
+          <div class="button">
+            <button>Let's Chat</button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="text">
+        <span
+          >Created By <a href="#">CodingLab</a> | &#169; 2021 All Rights
+          Reserved</span
+        >
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
