@@ -15,14 +15,18 @@ Before you begin, ensure you have the following requirements:
 
 On macOS and Linux:
 `
+
 python3 -m venv venv
 
 source venv/bin/activate
 
-`
+
+
 On Windows:
 `
+
 .\venv\Scripts\activate
+
 
 `
 ### Navigate to project director:
@@ -33,5 +37,24 @@ cd DownPaymentBackend
 
 ### Install the requirements:
 `
+
 pip install -r requirements.txt
+
 `
+
+To make changes to the database, run these commands:
+
+`
+
+python manage.py makemigrations
+python manage.py migrate
+
+`
+
+To add more assistance programs, add the hardcoded data inside the `populate_db.py` file, run the commands above to make the changes then run:
+
+`
+python manage.py populate_programs
+
+`
+
