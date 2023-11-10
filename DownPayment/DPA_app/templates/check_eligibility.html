@@ -1,0 +1,11 @@
+
+{% load static %}
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<script src="{% static 'js/script.js' %}"></script>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
