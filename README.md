@@ -17,10 +17,10 @@ Clone the project:
 git clone https://github.com/ngarciaotero/DownPaymentAssistance.git
 ```
 
-Navigate to project director:
+Navigate to the root directory:
 
 ```
-cd DownPayment
+cd DownPaymentAssistance
 ```
 
  Activate virtual environment:
@@ -45,15 +45,20 @@ On Windows:
 pip install -r requirements.txt
 ```
 
-To make changes to the database, run these commands:
+To make changes to the database, you will need to navigate to downpayment:
 
+```
+cd DownPayment
+```
+
+Then run these commands after making any changes to the database:
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-To add more assistance programs, add the hardcoded data inside the `populate_db.py` file, run the commands above to make the changes then run:
+To add more assistance programs, add the data inside the `populate_db.py` file, run the commands above to make the changes then run:
 
 ```
 python manage.py populate_programs
@@ -66,7 +71,7 @@ To start the applicationm run this command:
 python manage.py runserver
 ```
 
-View application on port `http://127.0.0.1:8000/check_eligibility/`
+View application and form on port `http://127.0.0.1:8000/check_eligibility/`
 
 
 
