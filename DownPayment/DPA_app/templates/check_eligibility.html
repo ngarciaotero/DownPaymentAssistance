@@ -9,6 +9,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     
+    <!-- dynamically fetch counties without duplicates from database -->
     <label for="county">County:</label>
     <select id="county" name="county">
         {% for county in counties %}
