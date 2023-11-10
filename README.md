@@ -32,7 +32,7 @@ On Windows:
 ### Navigate to project director:
 
 `
-cd DownPaymentBackend
+cd DownPayment
 `
 
 ### Install the requirements:
