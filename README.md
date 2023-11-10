@@ -2,7 +2,7 @@
 Get Down Payment Assistance is a web application designed to streamline the journey to home ownership by connecting users to grants, programs, and resources that cover down payments. 
 
 
-## Backend: getting started
+## getting started
 
 ### Prerequisites
 
@@ -11,7 +11,19 @@ Before you begin, ensure you have the following requirements:
 - Python 3.x
 - pip (Python package installer)
 
-### Activate virtual environment:
+Clone the project:
+
+```
+git clone https://github.com/ngarciaotero/DownPaymentAssistance.git
+```
+
+Navigate to project director:
+
+```
+cd DownPayment
+```
+
+ Activate virtual environment:
 
 On macOS and Linux:
 
@@ -27,13 +39,7 @@ On Windows:
 
 ```
 
-### Navigate to project director:
-
-```
-cd DownPayment
-```
-
-### Install the requirements:
+ Install the requirements:
 
 ```
 pip install -r requirements.txt
