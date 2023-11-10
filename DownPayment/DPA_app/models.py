@@ -47,9 +47,11 @@ class Program(models.Model):
             return False
         
         #check if user meets income requirements:
-        income_limit = self.income_limits.get(str(user.household_size))
-        if user.household_income > Decimal(income_limit):
-            return False
+            income_limit_str = self.income_limits.get(str(user.household_size))
+            if income_limit_str:
+                income_limit = Decimal(income_limit_str)
+                if user.household_income > income_limit:
+                    return False
         
         # check if user meets assets requirements:
         if user.liquid_assets > self.liquid_asset_limit:
