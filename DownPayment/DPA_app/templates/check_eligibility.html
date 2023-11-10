@@ -1,0 +1,22 @@
+
+{% load static %}
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<script src="{% static 'js/script.js' %}"></script>
+
+<!-- form -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <!-- dynamically fetch counties without duplicates from database -->
+    <label for="county">County:</label>
+    <select id="county" name="county">
+        {% for county in counties %}
+            <option value="{{ county }}">{{ county }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+

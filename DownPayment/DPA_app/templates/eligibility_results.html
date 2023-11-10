@@ -1,0 +1,8 @@
+<h1>Eligibility Results</h1>
+<ul>
+{% for program in programs %}
+  <li>{{ program.name }} - {{ program.details }}</li>
+{% empty %}
+  <li>No eligible programs found.</li>
+{% endfor %}
+</ul>
