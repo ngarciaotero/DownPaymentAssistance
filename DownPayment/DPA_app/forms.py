@@ -12,5 +12,5 @@ class UserInformationForm(forms.Form):
     household_size = forms.IntegerField()
     is_first_time_buyer = forms.BooleanField(required=False)
     is_three_year_buyer = forms.BooleanField(required=False)
-    is_female_head_of_household = forms.BooleanField(required=False)
-    is_PEN = forms.BooleanField(required=False)
+    is_female_head_of_household = forms.BooleanField(required=False, label='Check if you a female head of household')
+    is_PEN = forms.BooleanField(required=False, label='Check if you are a public employee, first responder, nurse or educator')

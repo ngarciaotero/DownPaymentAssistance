@@ -1,14 +1,81 @@
 
 {% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Get Down</title>
+    <!-- <link rel="stylesheet" href="{% static 'home.css' %}" /> -->
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'logo-png_1.png' %}" type="image/png" />
+   <style>
+.el-form {
+    background-color: white;      
+    border: 1px solid #4070f4;    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;                
+    width: 30%;                   
+    margin: 0 auto;              
+    text-align: center;          
+}
 
+.el-form label, .el-form select, .el-form button {
+    display: block;           
+    margin: 5px auto;           
+}
+
+button {
+    background-color: #4070f4;   
+    color: white;                
+    border: none;
+    padding: 8px 16px;         
+    cursor: pointer;          
+}
+
+button:hover {
+    background-color: #3050c4;  
+}
+
+
+
+@media (max-width: 500px) {
+  .home .text-two {
+    font-size: 55px;
+  }
+  .home .text-three {
+    font-size: 33px;
+  }
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: #4070f4;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
 <script src="{% static 'js/script.js' %}"></script>
 
 <!-- form -->
-<form method="post">
+<form class="el-form" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    
+
+    <!-- Render all form fields except 'county' -->
+    {% for field in form %}
+        {% if field.name != 'county' %}
+            <p>{{ field.label_tag }} {{ field }}</p>
+        {% endif %}
+    {% endfor %}
+
     <!-- dynamically fetch counties without duplicates from database -->
     <label for="county">County:</label>
     <select id="county" name="county">
@@ -20,3 +87,5 @@
     <button type="submit">Submit</button>
 </form>
 
+
+  </body>
