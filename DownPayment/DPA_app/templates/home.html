@@ -1,28 +1,693 @@
+{%  load static %}
+
+
 <!DOCTYPE html>
 <!-- Website - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <title>The Get Down</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="{% static 'home.css' %}" /> -->
     <!-- Fontawesome CDN Link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="/The Get Down/Images/logo-png_1.png"
-      type="image/png"
-    />
+    <link rel="icon" href="{% static 'logo-png_1.png' %}" type="image/png" />
+    <style>
+      /* Google Font CDN Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #6e93f7;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4070f4;
+}
+/* navbar styling */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+}
+nav.sticky {
+  background: #4070f4;
+  padding: 13px 0;
+}
+nav .navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+nav .navbar .logo a {
+  font-weight: 500;
+  font-size: 35px;
+  color: #4070f4;
+}
+nav.sticky .navbar .logo a {
+  color: #fff;
+}
+nav .navbar .menu {
+  display: flex;
+  position: relative;
+}
+nav .navbar .menu li {
+  list-style: none;
+  margin: 0 8px;
+}
+.navbar .menu a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0e2431;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+.navbar .menu a:hover {
+  color: #4070f4;
+}
+nav.sticky .menu a {
+  color: #fff;
+}
+nav.sticky .menu a:hover {
+  color: #0e2431;
+}
+.navbar .media-icons a {
+  color: #4070f4;
+  font-size: 18px;
+  margin: 0 6px;
+}
+nav.sticky .media-icons a {
+  color: #fff;
+}
+
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn {
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+nav .menu-btn {
+  color: #4070f4;
+}
+nav.sticky .menu-btn {
+  color: #fff;
+}
+.navbar .menu .menu-btn {
+  color: #fff;
+}
+
+/* home section styling */
+.home {
+  height: 100vh;
+  width: 100%;
+  background: url("{% static 'images/background1.png' %}") no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  padding-top: 50px; /* Adjust the padding-top value */
+}
+/* ------------------------------------------------ */
+.text-container {
+  max-width: 600px; /* Adjust the width as needed */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Adjust the background color and opacity */
+  padding: 20px; /* Add padding for better readability */
+  border-radius: 10px; /* Add rounded corners if desired */
+  margin: auto; /* Center the box horizontally */
+  margin-top: 50px; /* Add some top margin for spacing */
+  margin-left: 20px; /* Adjust the left margin */
+}
+
+.home .text {
+  text-align: left;
+  margin-right: 20px; /* Add margin for spacing */
+}
+/* ------------------------------------------------ */
+.home .home-content {
+  width: 60%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px; /* Add padding for spacing on the left */
+  position: relative; /* Added position: relative */
+}
+
+.background-image {
+  position: absolute; /* Added position: absolute */
+  top: 0;
+  right: -20px; /* Adjusted right value */
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .text-one {
+  font-size: 25px;
+  color: #0e2431;
+}
+.home .text-two {
+  color: #0e2431;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .text-three {
+  font-size: 40px;
+  margin: 5px 0;
+  color: #4070f4;
+}
+.home .text-four {
+  font-size: 23px;
+  margin: 5px 0;
+  color: #0e2431;
+}
+.home .button {
+  margin: 14px 0;
+}
+.home .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+.home .button button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+/* About Section Styling */
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
+section {
+  padding-top: 40px;
+}
+section .content {
+  width: 80%;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+section .title span {
+  color: #0e2431;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #4070f4;
+  left: 0;
+  bottom: 0;
+}
+section .title span::after {
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about .about-details .left {
+  width: 45%;
+}
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-details .right {
+  width: 55%;
+}
+section .topic {
+  color: #0e2431;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.about-details .right p {
+  text-align: justify;
+  color: #0e2431;
+}
+section .button {
+  margin: 16px 0;
+}
+section .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section .button button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+/* My Skills CSS */
+.skills {
+  background: #f0f8ff;
+}
+.skills .content {
+  padding: 40px 0;
+}
+.skills .skills-details {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  align-items: center;
+}
+.skills-details .text {
+  width: 50%;
+}
+.skills-details p {
+  color: #0e2431;
+  text-align: justify;
+}
+.skills .skills-details .experience {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.skills-details .experience .num {
+  color: #0e2431;
+  font-size: 80px;
+}
+.skills-details .experience .exp {
+  color: #0e2431;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 6px;
+}
+.skills-details .boxes {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills-details .box {
+  /* width: calc(100% / 2 - 20px);
+   */
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px; /* Add padding for better spacing */
+  border: 1px solid #ddd; /* Add a border for visual separation */
+  border-radius: 5px; /* Optional: Add rounded corners for a cleaner look */
+}
+.skills-details .boxes .topic {
+  font-size: 20px;
+  color: #4070f4;
+}
+.skills-details .boxes .per {
+  font-size: 60px;
+  color: #4070f4;
+}
+
+/* --------------old questionnaire button styling-- */
+.skills-details .question {
+  margin-bottom: 0px;
+  display: center;
+  padding: 0px; /* Add padding for better spacing */
+}
+
+.skills-details .question .options {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-details .question label {
+  font-weight: bold;
+  font-size: 20px; /* You can adjust the font size of the questions */
+}
+
+.question p {
+  font-size: 30px; /* Adjust the font size as needed */
+}
+
+.question button {
+  display: center;
+  margin: 10px 50px;
+  padding-right: 100px;
+}
+
+/* Style for the answer options */
+.skills-details .options label {
+  font-size: 18px; /* You can adjust the font size of the answer options */
+}
+
+/* -----TESTING ---- */
+.skills-details .next-button,
+.skills-details .submit-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px 40px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.skills-details .next-button:hover,
+.skills-details .submit-button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+/* Center the buttons horizontally */
+.question {
+  text-align: center;
+}
+
+/* ----------- */
+.skills-details .next-button {
+  outline: none;
+  padding: 8px 40px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.skills-details .next-button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+.skills-details .submit-button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.skills-details .submit-button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+/* Add this code to adjust the size of radio buttons */
+.skills-details input[type="radio"] {
+  transform: scale(2); /* Adjust the scale factor as needed */
+  margin-right: 5px; /* Optional: Add some spacing between the radio button and label */
+}
+/* -------- */
+
+/* My Services CSS */
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services .boxes .box {
+  margin: 20px 0;
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover {
+  background: #4070f4;
+  color: #fff;
+}
+.services .boxes .box .icon {
+  height: 50px;
+  width: 50px;
+  background: #4070f4;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+.boxes .box:hover .icon {
+  background-color: #fff;
+  color: #4070f4;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #0e2431;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #fff;
+}
+/* Contact Me CSS */
+.contact {
+  background: #f0f8ff;
+}
+.contact .content {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.contact .text {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer CSS */
+footer {
+  background: #4070f4;
+  padding: 15px 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+footer .text span {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+}
+footer .text span a {
+  font-weight: 500;
+  color: #fff;
+}
+footer .text span a:hover {
+  text-decoration: underline;
+}
+/* Scroll TO Top Button CSS */
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #4070f4;
+  padding: 7px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right {
+    width: 90%;
+    margin: 40px 0;
+  }
+  .services .boxes .box {
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .about .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  nav .navbar {
+    width: 90%;
+  }
+  nav .navbar .menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #0e2431;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu {
+    left: 0;
+  }
+  nav .navbar .menu a {
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover {
+    color: #4070f4;
+  }
+  nav .navbar .media-icons {
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn {
+    display: block;
+  }
+  .home .text-two {
+    font-size: 65px;
+  }
+  .home .text-three {
+    font-size: 35px;
+  }
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skills-details .text {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .boxes .box {
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .text-two {
+    font-size: 55px;
+  }
+  .home .text-three {
+    font-size: 33px;
+  }
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: #4070f4;
+  }
+}
+    </style>
   </head>
   <body>
     <!-- Move to up button -->
     <div class="scroll-button">
       <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
-    <!-- navigation menu -->
+    <!-- navgaition menu -->
     <nav>
       <div class="navbar">
         <div class="logo"><a href="#">The Get Down.</a></div>
@@ -30,7 +695,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">Mission</a></li>
           <li><a href="#skills">Questionnaire</a></li>
-          <li><a href="/maps/progmap.html">Maps and Resources</a></li>
+          <li><a href="#services">Resources</a></li>
           <!-- <li><a href="#contact">Contact</a></li> -->
           <div class="cancel-btn">
             <i class="fas fa-times"></i>
@@ -78,7 +743,7 @@
         <div class="title"><span>Our Mission</span></div>
         <div class="about-details">
           <div class="left">
-            <img src="/The Get Down/Images/about1.png" alt="" />
+            <img src="{% static 'images/background1.jpg' %}" alt="Example Image">
           </div>
           <div class="right">
             <div class="topic">Where Dreams Become Homes</div>
@@ -112,9 +777,15 @@
     <section class="skills" id="skills">
       <div class="content">
         <div class="title"><span>Program Eligibility Quiz</span></div>
+        <!-- link to check availabilitu -->
+        <div class="button" style="text-align: center;">
+          <a href="{% url 'check_eligibility' %}" class="btn" style="background-color: #4070f4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 15px;">Check Eligibility</a>
+      </div>
+      
+        
         <div class="skills-details" id="quizContainer">
           <!-- Questionnaire Section -->
-          <div id="questionnaire">
+          <!-- <div id="questionnaire">
             <div class="question" id="question-1">
               <p id="question-text-1">
                 Have you owned a home in the past 3 years?
@@ -191,8 +862,8 @@
               id="eligibility-message"
               class="message"
               style="display: none"
-            ></div>
-          </div>
+            ></div> -->
+          <!-- </div> -->
           <!-- Question 1 -->
           <!-- <div class="box" id="question1">
             <div class="question">
@@ -630,7 +1301,7 @@
         </div>
       </div>
     </section>
-    <script src="script.js"></script>
+    <script src="{% static 'home.js' %}"></script>
 
     <!-- My Services Section Start -->
     <section class="services" id="services">
@@ -730,6 +1401,208 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // Sticky Navigation Menu JS Code
+let nav = document.querySelector("nav");
+let scrollBtn = document.querySelector(".scroll-button a");
+console.log(scrollBtn);
+let val;
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 20) {
+    nav.classList.add("sticky");
+    scrollBtn.style.display = "block";
+  } else {
+    nav.classList.remove("sticky");
+    scrollBtn.style.display = "none";
+  }
+};
+
+// Side NavIgation Menu JS Code
+let body = document.querySelector("body");
+let navBar = document.querySelector(".navbar");
+let menuBtn = document.querySelector(".menu-btn");
+let cancelBtn = document.querySelector(".cancel-btn");
+menuBtn.onclick = function () {
+  navBar.classList.add("active");
+  menuBtn.style.opacity = "0";
+  menuBtn.style.pointerEvents = "none";
+  body.style.overflow = "hidden";
+  scrollBtn.style.pointerEvents = "none";
+};
+cancelBtn.onclick = function () {
+  navBar.classList.remove("active");
+  menuBtn.style.opacity = "1";
+  menuBtn.style.pointerEvents = "auto";
+  body.style.overflow = "auto";
+  scrollBtn.style.pointerEvents = "auto";
+};
+
+// Side Navigation Bar Close While We Click On Navigation Links
+let navLinks = document.querySelectorAll(".menu li a");
+for (var i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("click", function () {
+    navBar.classList.remove("active");
+    menuBtn.style.opacity = "1";
+    menuBtn.style.pointerEvents = "auto";
+  });
+}
+
+// Check Eligibility Button Click Functionality
+let eligibilityButton = document.querySelector(".home .button button");
+
+eligibilityButton.addEventListener("click", function () {
+  // Scroll to the skills section
+  document.querySelector("#skills").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
+function nextQuestion(currentQuestionId, nextQuestionId) {
+  const currentQuestion = document.getElementById(currentQuestionId);
+  const nextQuestion = document.getElementById(nextQuestionId);
+
+  currentQuestion.style.display = "none";
+  nextQuestion.style.display = "block";
+}
+
+function submitQuiz() {
+  // Implement logic to process quiz results
+  alert("Quiz submitted!");
+}
+
+// ------------Eligibility Quesionnaire----------------------
+var currentQuestion = 1;
+var eligiblePrograms = [];
+
+function showNextQuestion(questionText, nextQuestionId) {
+  var currentQuestionElement = document.getElementById(
+    "question-" + currentQuestion
+  );
+  var nextQuestionElement = document.getElementById(nextQuestionId);
+
+  if (currentQuestionElement) {
+    currentQuestionElement.style.display = "none";
+  }
+
+  currentQuestion++;
+
+  if (nextQuestionElement) {
+    nextQuestionElement.style.display = "block";
+    var questionTextElement = document.getElementById(
+      "question-text-" + (currentQuestion - 1)
+    );
+    questionTextElement.innerText = questionText;
+  } else {
+    showEligibilityBasedOnEligiblePrograms();
+  }
+}
+
+function showEligibilityMessage(message) {
+  var eligibilityMessage = document.getElementById("eligibility-message");
+  eligibilityMessage.innerText = message;
+  eligibilityMessage.style.display = "block";
+}
+
+function showEligibilityBasedOnEligiblePrograms() {
+  // After the last question, check the eligiblePrograms array
+  if (eligiblePrograms.length === 0) {
+    showEligibilityMessage(
+      "You qualify for the Standard program for a $10,000 downpayment grant."
+    );
+  } else if (
+    eligiblePrograms.includes("CHOICE") &&
+    eligiblePrograms.includes("PEN")
+  ) {
+    showEligibilityMessage(
+      "You qualify for either the Choice program for a $12,500 downpayment grant or the PEN program for a $12,500 downpayment grant."
+    );
+  } else if (eligiblePrograms.includes("CHOICE")) {
+    showEligibilityMessage(
+      "You qualify for the Choice program for a $12,500 downpayment grant."
+    );
+  } else if (eligiblePrograms.includes("PEN")) {
+    showEligibilityMessage(
+      "You qualify for the PEN program for a $12,500 downpayment grant."
+    );
+  }
+}
+
+function answerQuestion(answer) {
+  switch (currentQuestion) {
+    case 1:
+      if (answer === "Yes") {
+        showEligibilityMessage("Not eligible");
+      } else {
+        showNextQuestion(
+          "Is your household income below the limit for your area based on household size?",
+          "question-2"
+        );
+      }
+      break;
+
+    case 2:
+      if (answer === "Yes") {
+        showNextQuestion(
+          "Do you meet credit requirements for a mortgage loan?",
+          "question-3"
+        );
+      } else {
+        showEligibilityMessage("Not eligible");
+      }
+      break;
+
+    case 3:
+      if (answer === "Yes") {
+        showNextQuestion("Are you a first-time homebuyer?", "question-4");
+      } else {
+        showEligibilityMessage("Not eligible");
+      }
+      break;
+
+    case 4:
+      if (answer === "Yes") {
+        // Add "CHOICE" to eligible programs
+        eligiblePrograms.push("CHOICE");
+        showNextQuestion(
+          "Are you or anyone in your family have a disability?",
+          "question-6"
+        );
+      } else {
+        showNextQuestion(
+          "Do you or anyone in your family have a disability?",
+          "question-5"
+        );
+      }
+      break;
+
+    case 5:
+      if (answer === "Yes") {
+        // Add "CHOICE" to eligible programs
+        eligiblePrograms.push("CHOICE");
+        showNextQuestion(
+          "Are you employed as a public protector, educator, healthcare worker, or active military?",
+          "question-6"
+        );
+      } else {
+        showNextQuestion(
+          "Are you employed as a public protector, educator, healthcare worker, or active military?",
+          "question-6"
+        );
+      }
+      break;
+
+    case 6:
+      if (answer === "Yes") {
+        // Add "PEN" to eligible programs
+        eligiblePrograms.push("PEN");
+      }
+      showEligibilityBasedOnEligiblePrograms();
+      break;
+
+    default:
+      break;
+  }
+}   
+    </script>
   </body>
 </html>

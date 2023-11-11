@@ -21,3 +21,7 @@ def check_eligibility(request):
     
     return render(request, 'check_eligibility.html', {'form': form, 'counties': counties})
 
+# home page:
+def home(request):
+    return render(request, 'home.html')
+

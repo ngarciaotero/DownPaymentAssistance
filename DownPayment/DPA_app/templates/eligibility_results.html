@@ -1,8 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+        }
+        h1 {
+            color: #4070f4; 
+        }
+        .results-list {
+            list-style-type: none;
+            padding: 0; 
+            display: inline-block; 
+            text-align: left; 
+        }
+        .results-list li {
+            background-color: white;
+            border: 1px solid #4070f4; 
+            border-radius: 10px; 
+            margin: 10px 0;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+    </style>
+</head>
+<body>
+
 <h1>Eligibility Results</h1>
-<ul>
+
+<ul class="results-list">
 {% for program in programs %}
-  <li>{{ program.name }} - {{ program.details }}</li>
+  <li><strong>{{ program.name }}</strong> - {{ program.details }}</li>
 {% empty %}
   <li>No eligible programs found.</li>
 {% endfor %}
 </ul>
+
+</body>
+</html>
