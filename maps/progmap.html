@@ -1,32 +1,15 @@
-<!--
-  Copyright 2023 Google LLC
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <!DOCTYPE html>
-<html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
   <head>
-    <title>Down Payment Assistance</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>The Get Down</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="/maps/map-styles.css" />
-    <link rel="stylesheet" href="/The Get Down/style.css" />
-    <script type="text/javascript" src="/maps/mapConfig.js"></script>
-    <script type="module" src="/maps/app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
@@ -35,8 +18,65 @@
     />
   </head>
   <body>
-    <!-- Uses the Extended Component Library (https://github.com/googlemaps/extended-component-library)
-         to configure Google Maps Platform APIs. -->
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <!-- navigation menu -->
+    <nav>
+      <div class="navbar">
+        <div class="logo"><a href="#">The Get Down.</a></div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Mission</a></li>
+          <li><a href="#skills">Questionnaire</a></li>
+          <li><a href="/maps/progmap.html">Maps and Resources</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+          <div class="cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </ul>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+    <!-- My Services Section Start -->
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title"><span>Resource and Housing Area Map</span></div>
+      </div>
+    </section>
+
+    <!-- Contact Me section Start -->
+    <!-- <section class="contact" id="contact">
+      <div class="content">
+        <div class="title"><span>Contact Me</span></div>
+        <div class="text">
+          <div class="topic">Have Any Project?</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+            neque ipsum corrupti dolores, facere numquam voluptate aspernatur
+            sit perferendis qui nisi modi! Recusandae deserunt consequatur
+            voluptatibus alias repellendus nobis eligendi.
+          </p>
+          <div class="button">
+            <button>Let's Chat</button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <link rel="stylesheet" type="text/css" href="/maps/map-styles.css" />
+    <link rel="stylesheet" href="/The Get Down/style.css" />
+    <script type="text/javascript" src="/The Get Down/script.js"></script>
+    <script type="text/javascript" src="/maps/mapConfig.js"></script>
+    <script type="module" src="/maps/app.js"></script>
     <gmpx-api-loader
       key="AIzaSyB2MUok94X6NM60s7tsWqyxhmsi_hUwmDk"
       solution-channel="GMP_QB_locatorplus_v8_cABCDE"
@@ -113,5 +153,15 @@
         </gmpx-place-data-provider>
       </li>
     </template>
+
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="text">
+        <span
+          >Created By <a href="#">The Get Down</a> | &#169; 2023 All Rights
+          Reserved</span
+        >
+      </div>
+    </footer>
   </body>
 </html>
