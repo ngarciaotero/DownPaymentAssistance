@@ -103,7 +103,6 @@ nav.sticky .media-icons a {
   color: #fff;
 }
 
-
 /* Side Navigation Menu Button CSS */
 nav .menu-btn,
 .navbar .menu .cancel-btn {
@@ -130,7 +129,7 @@ nav.sticky .menu-btn {
 .home {
   height: 100vh;
   width: 100%;
-  background: url("{% static 'images/background1.png' %}") no-repeat;
+  background: url("images/background1.jpg") no-repeat;
   background-size: cover;
   background-size: 100% 100%;
   background-position: center center;
@@ -539,11 +538,22 @@ section .button button:hover {
 }
 
 /* Footer CSS */
+
+
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background: #4070f4;
   padding: 15px 0;
   text-align: center;
   font-family: "Poppins", sans-serif;
+  border-top: 1px solid #ddd;
+  /* center items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer .text span {
   font-size: 17px;
