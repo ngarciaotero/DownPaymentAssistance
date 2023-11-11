@@ -1,5 +1,5 @@
 /* Google Font CDN Link */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -28,10 +28,12 @@
 nav {
   position: fixed;
   width: 100%;
+  top: 0;
   padding: 20px 0;
   z-index: 998;
   transition: all 0.3s ease;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #fff;
 }
 nav.sticky {
   background: #4070f4;
@@ -111,12 +113,12 @@ nav.sticky .menu-btn {
 .home {
   height: 100vh;
   width: 100%;
-  background: url("images/background1.jpg") no-repeat;
+  background: url('images/background1.jpg') no-repeat;
   background-size: cover;
   background-size: 100% 100%;
   background-position: center center;
   background-attachment: fixed;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   position: relative;
   padding-top: 50px; /* Adjust the padding-top value */
 }
@@ -217,7 +219,7 @@ section {
 section .content {
   width: 80%;
   margin: 40px auto;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .about .about-details {
   display: flex;
@@ -238,7 +240,7 @@ section .title span {
 }
 section .title span::before,
 section .title span::after {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
   width: 100%;
@@ -454,7 +456,7 @@ section .button button:hover {
 }
 
 /* Add this code to adjust the size of radio buttons */
-.skills-details input[type="radio"] {
+.skills-details input[type='radio'] {
   transform: scale(2); /* Adjust the scale factor as needed */
   margin-right: 5px; /* Optional: Add some spacing between the radio button and label */
 }
@@ -524,7 +526,7 @@ footer {
   background: #4070f4;
   padding: 15px 0;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 footer .text span {
   font-size: 17px;
@@ -660,4 +662,72 @@ footer .text span a:hover {
     font-size: 50px;
     color: #4070f4;
   }
+}
+
+/* Mission Page */
+
+.logo {
+  text-align: center;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 50px;
+}
+
+.menu {
+  margin-top: 5px;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.media-icons {
+  margin-top: 10px;
+}
+
+.menu-btn {
+  margin-top: 10px;
+}
+
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  max-width: 100%;
+  height: 600px;
+  text-align: center;
+  background-color: #fcd19c;
+  font-size: 45px;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+}
+
+.mission-statement {
+  padding: 100px 0 0 100px;
+  font-family: 'Inter', sans-serif;
+  max-width: 80%;
+}
+
+.mission-statement h3 {
+  padding-top: 20px;
+}
+
+.mission-statement p {
+  padding-top: 10px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.mission-statement img {
+  padding-top: 30px;
+  width: 150px;
+  height: auto;
 }
