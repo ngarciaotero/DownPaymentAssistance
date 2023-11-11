@@ -1,0 +1,26 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h1,
+form {
+  color: #0d6efd;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+form {
+  font-size: 18px;
+}
+
+
+/*center the input boxes of the form */
+.input-group {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
