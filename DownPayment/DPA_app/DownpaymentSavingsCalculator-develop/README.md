@@ -1,4 +1,4 @@
-# HTML, CSS, JS (Auto Refresh)
+# Down Payment Assistance Calculator
 
 This template is a starter for building the Down Payment Assistance Calculator, powered by [Vite](https://vitejs.dev/). HTML provides the basic structure, CSS controls formatting, and JavaScript controls the behavior of different elements.
 
